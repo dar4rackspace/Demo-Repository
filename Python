@@ -1,0 +1,7 @@
+from pyspark.sql import SparkSession
+import pyspark
+
+spark = SparkSession.builder.appName("Example").getOrCreate()
+data = [(1, "Alice"), (2, "Bob")]
+df = spark.createDataFrame(data, ["ID", "Name"])
+df.show()
